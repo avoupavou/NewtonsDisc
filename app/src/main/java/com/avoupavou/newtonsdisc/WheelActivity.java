@@ -17,7 +17,6 @@ public class WheelActivity  extends Activity {
     /** The OpenGL view */
     private GLSurfaceView glSurfaceView;
     private GlRenderer mRenderer;
-    private int speed;
 
 
     /** Called when the activity is first created. */
@@ -59,7 +58,7 @@ public class WheelActivity  extends Activity {
         glSurfaceView.onPause();
     }
 
-    private final float TOUCH_SCALE_FACTOR = 180.0f /20;
+    private final float TOUCH_SCALE_FACTOR = 180.0f /20; //touch factor default = 180.0f / 320
     private float mPreviousX;
     private float mPreviousY;
 
@@ -94,7 +93,6 @@ public class WheelActivity  extends Activity {
                                 ((dx + dy) * TOUCH_SCALE_FACTOR));  // = 180.0f / 320
                 glSurfaceView.requestRender();
         }
-        mRenderer.setSpeed(speed);
 
         mPreviousX = x;
         mPreviousY = y;

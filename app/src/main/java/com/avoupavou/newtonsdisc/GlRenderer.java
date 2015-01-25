@@ -1,6 +1,7 @@
 package com.avoupavou.newtonsdisc;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.opengl.GLSurfaceView;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -8,6 +9,10 @@ import javax.microedition.khronos.opengles.GL10;
 
         import android.opengl.GLSurfaceView;
         import android.opengl.GLU;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
+
+import java.util.prefs.Preferences;
 
 /**
  * Provides drawing instructions for a GLSurfaceView object. This class
@@ -18,17 +23,18 @@ import javax.microedition.khronos.opengles.GL10;
  *   <li>{@link android.opengl.GLSurfaceView.Renderer#onSurfaceChanged}</li>
  * </ul>
  */
-public class GlRenderer implements GLSurfaceView.Renderer {
+public class GlRenderer  implements GLSurfaceView.Renderer {
 
     private Square 		square;		// the square
     private Context 	context;
     private float mAngle;
     private int speed;
+    private SharedPreferences sharedPref;
     /** Constructor to set the handed over context */
     public GlRenderer(Context context) {
         this.context = context;
         mAngle=0;
-        speed=0;
+        speed=144;
         // initialise the square
         this.square = new Square();
     }
@@ -48,7 +54,7 @@ public class GlRenderer implements GLSurfaceView.Renderer {
         // is the same as moving the camera 5 units away
 //		gl.glScalef(0.5f, 0.5f, 0.5f);			// scale the square to 50%
         // otherwise it will be too large
-        mAngle+=144*speed;
+        mAngle+=speed;
         gl.glRotatef(mAngle, 0, 0, 1);
         square.draw(gl);						// Draw the triangle
 
@@ -70,6 +76,10 @@ public class GlRenderer implements GLSurfaceView.Renderer {
         gl.glMatrixMode(GL10.GL_MODELVIEW); 	//Select The Modelview Matrix
         gl.glLoadIdentity(); 					//Reset The Modelview Matrix
 
+        //Get preferences for disc speed pantazis.25.01.15
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this.context);
+        boolean speedOn = sharedPref.getBoolean("speed", false);
+        if(!speedOn) speed=0;
 
     }
 
@@ -99,6 +109,6 @@ public class GlRenderer implements GLSurfaceView.Renderer {
     public float getAngle(){
         return mAngle;
     }
-    public void setSpeed(int rotation){speed=rotation; }
+
 
 }
