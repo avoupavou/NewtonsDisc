@@ -58,7 +58,7 @@ public class WheelActivity  extends Activity {
         glSurfaceView.onPause();
     }
 
-    private final float TOUCH_SCALE_FACTOR = 180.0f /20; //touch factor default = 180.0f / 320
+    private final float TOUCH_SCALE_FACTOR = 180.0f /320; //touch factor default = 180.0f / 320
     private float mPreviousX;
     private float mPreviousY;
 

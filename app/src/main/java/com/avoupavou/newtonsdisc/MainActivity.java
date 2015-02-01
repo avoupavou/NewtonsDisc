@@ -11,7 +11,6 @@ import android.view.View;
 
 public class MainActivity extends ActionBarActivity {
 
-    public final static String EXTRA_MESSAGE = "com.example.pantazis.newtonwheel.MESSAGE";
     public float rotation_flag;
 
     @Override
@@ -46,7 +45,6 @@ public class MainActivity extends ActionBarActivity {
 
     public void startWheel(View view){
         Intent towheel = new Intent(MainActivity.this, WheelActivity.class);
-        towheel.putExtra("int_value", rotation_flag);
         startActivity(towheel);
     }
 

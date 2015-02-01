@@ -10,7 +10,7 @@
     <string name="title_activity_wheel_acticvity">WheelActicvity</string>
     <string name="welcome_text">Welcome to newton\'s wheel app</string>
     <string name="wheel_button">Wheel</string>
-    <string name="About">Here goes text about the app</string>
+    <string name="About">A Newton disc, discovered by Isaac Newton, is a disc with segments in rainbow colours. When the disc is rotated, the colors fade to white; In this way Isaac Newton demonstrated that white light is a combination of the seven different colours found in a rainbow. A Newton Disc can be created by painting a disc with the seven different colours. A combination of red, green and blue in the circular disc will yield the same result. This is due to the phenomenon called persistence of vision. It can easily be board piece. It was an important discovery as it proves that light is not colourless,but has colour in it which together converge to give a faded white colour which we consider colourless. This property is based on the principles of dispersion of light.</string>
     <string name="title_activity_about">About</string>
     <string name="title_activity_settings">Settings</string>
     <string name="speed_setting_button">Set rotation speed to optimal:</string>

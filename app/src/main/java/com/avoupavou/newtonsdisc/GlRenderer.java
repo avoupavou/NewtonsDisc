@@ -7,12 +7,9 @@ import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-        import android.opengl.GLSurfaceView;
-        import android.opengl.GLU;
-import android.preference.Preference;
+import android.opengl.GLU;
 import android.preference.PreferenceManager;
-
-import java.util.prefs.Preferences;
+import android.util.Log;
 
 /**
  * Provides drawing instructions for a GLSurfaceView object. This class
@@ -25,16 +22,19 @@ import java.util.prefs.Preferences;
  */
 public class GlRenderer  implements GLSurfaceView.Renderer {
 
+    private static final String TAG = "GlRenderer";
     private Square 		square;		// the square
     private Context 	context;
-    private float mAngle;
-    private int speed;
+    private float ultimateSpeed;
+    private float angle;
+    private float speed;
     private SharedPreferences sharedPref;
     /** Constructor to set the handed over context */
     public GlRenderer(Context context) {
         this.context = context;
-        mAngle=0;
-        speed=144;
+        speed=0;
+        ultimateSpeed=144;
+        angle = 0;
         // initialise the square
         this.square = new Square();
     }
@@ -51,13 +51,31 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
 
         // Drawing
         gl.glTranslatef(0.0f, 0.0f, -5.0f);		// move 5 units INTO the screen
-        // is the same as moving the camera 5 units away
-//		gl.glScalef(0.5f, 0.5f, 0.5f);			// scale the square to 50%
-        // otherwise it will be too large
-        mAngle+=speed;
-        gl.glRotatef(mAngle, 0, 0, 1);
+
+        // Optimal speed for auto rotation - default is off
+        angle+= ultimateSpeed;
+
+        
+        angle+= speed;
+
+        //Log.d(TAG, "speed:"+speed);
+        //Log.d(TAG, "Angle:"+angle);
+
+        speed = (speed>144)?144:speed;
+        speed = (speed<-144)?-144:speed;
+
+  
+        //Log.d(TAG, "speed:" + speed);
+        //Log.d(TAG, "Angle:" + angle);
+        
+
+        gl.glRotatef(angle, 0, 0, 1);
         square.draw(gl);						// Draw the triangle
 
+        if(speed>0)
+            speed = speed - 0.01f*speed;
+        else if (speed <0)
+            speed = speed - 0.01f*speed;
     }
 
     @Override
@@ -76,10 +94,10 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
         gl.glMatrixMode(GL10.GL_MODELVIEW); 	//Select The Modelview Matrix
         gl.glLoadIdentity(); 					//Reset The Modelview Matrix
 
-        //Get preferences for disc speed pantazis.25.01.15
+        // Get preferences for disc speed pantazis.25.01.15
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this.context);
         boolean speedOn = sharedPref.getBoolean("speed", false);
-        if(!speedOn) speed=0;
+        if(!speedOn) ultimateSpeed=0;
 
     }
 
@@ -103,12 +121,10 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
     }
 
     public void setAngle(float angle){
-        mAngle=angle;
+        speed=angle;
     }
 
     public float getAngle(){
-        return mAngle;
+        return speed;
     }
-
-
 }
