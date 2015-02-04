@@ -22,7 +22,7 @@ import android.util.Log;
  */
 public class GlRenderer  implements GLSurfaceView.Renderer {
 
-    private static final String TAG = "GlRenderer";
+    //private static final String TAG = "GlRenderer";
     private Square 		square;		// the square
     private Context 	context;
     private float ultimateSpeed;
@@ -72,6 +72,7 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
         gl.glRotatef(angle, 0, 0, 1);
         square.draw(gl);						// Draw the triangle
 
+        // slow down the disc
         if(speed>0)
             speed = speed - 0.01f*speed;
         else if (speed <0)
@@ -98,7 +99,6 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this.context);
         boolean speedOn = sharedPref.getBoolean("speed", false);
         if(!speedOn) ultimateSpeed=0;
-
     }
 
     @Override

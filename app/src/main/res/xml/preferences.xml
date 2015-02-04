@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
     <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
         <CheckBoxPreference
+            android:id="@+id/speed"
             android:key="speed"
             android:title="@string/speed_setting_button"
             android:defaultValue="false" />
+
+        <ListPreference
+            android:id="@+id/disc_type"
+            android:title="Disc type"
+            android:summary="Select the disc type"
+            android:key="discType"
+            android:defaultValue="1"
+            android:entries="@array/listArray"
+            android:entryValues="@array/listValues" />
+
     </PreferenceScreen>
+

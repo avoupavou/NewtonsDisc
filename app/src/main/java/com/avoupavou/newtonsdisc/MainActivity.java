@@ -11,8 +11,6 @@ import android.view.View;
 
 public class MainActivity extends ActionBarActivity {
 
-    public float rotation_flag;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
         Intent toAbout = new Intent(MainActivity.this, About.class);
         startActivity(toAbout);
     }
+
     public void openSettings(){
         Intent toSettings = new Intent(MainActivity.this, Settings.class);
         startActivity(toSettings);

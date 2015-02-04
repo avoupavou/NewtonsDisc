@@ -1,10 +1,10 @@
 package com.avoupavou.newtonsdisc;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 
 public class About extends ActionBarActivity {
 
@@ -31,9 +31,15 @@ public class About extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            openSettings();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openSettings(){
+        Intent toSettings = new Intent(About.this, Settings.class);
+        startActivity(toSettings);
     }
 }

@@ -3,12 +3,15 @@ package com.avoupavou.newtonsdisc;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -23,6 +26,8 @@ import javax.microedition.khronos.opengles.GL10;
 
 
 public class Square {
+
+    private static final String TAG = "Square";
 	
 	private FloatBuffer vertexBuffer;	// buffer holding the vertices
 	private float vertices[] = {
@@ -71,10 +76,24 @@ public class Square {
 	 * @param context
 	 */
 	public void loadGLTexture(GL10 gl, Context context) {
+        //Log.d(TAG, "TESTTESTTEST:");
+
 		// loading texture
-		Bitmap bitmap;
-        bitmap = BitmapFactory.decodeResource(context.getResources(),
-                R.drawable.wheel_2);
+        SharedPreferences sharedPref;
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        // Get preferences for disc type
+        String downloadType = sharedPref.getString("discType", "1");
+
+        //Log.d(TAG, "Disc Type:" + downloadType);
+
+        Bitmap bitmap;
+        if(downloadType.equals("1")) {
+            bitmap = BitmapFactory.decodeResource(context.getResources(),
+                    R.drawable.disc);
+        } else {
+            bitmap = BitmapFactory.decodeResource(context.getResources(),
+                    R.drawable.disc1);
+        }
 
 
         // generate one texture pointer
