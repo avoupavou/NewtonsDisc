@@ -23,6 +23,7 @@ import android.util.Log;
 public class GlRenderer  implements GLSurfaceView.Renderer {
 
     //private static final String TAG = "GlRenderer";
+    private static final float MAX_SPEED=144;
     private Square 		square;		// the square
     private Context 	context;
     private float ultimateSpeed;
@@ -33,7 +34,7 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
     public GlRenderer(Context context) {
         this.context = context;
         speed=0;
-        ultimateSpeed=144;
+        ultimateSpeed=MAX_SPEED;
         angle = 0;
         // initialise the square
         this.square = new Square();
@@ -61,8 +62,8 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
         //Log.d(TAG, "speed:"+speed);
         //Log.d(TAG, "Angle:"+angle);
 
-        speed = (speed>144)?144:speed;
-        speed = (speed<-144)?-144:speed;
+        speed = (speed>MAX_SPEED)?MAX_SPEED:speed;
+        speed = (speed<-MAX_SPEED)?-MAX_SPEED:speed;
 
   
         //Log.d(TAG, "speed:" + speed);
