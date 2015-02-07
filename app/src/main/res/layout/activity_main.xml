@@ -12,29 +12,46 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF"
+        android:textAlignment="center"
         android:text="@string/welcome_text"
-        android:id="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold" />
+        android:id="@+id/textViewWelcome"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#FFFFFF"
+        android:textAlignment="center"
         android:text="@string/creators"
-        android:id="@+id/textView2"
-        android:layout_marginTop="42dp"
-        android:layout_below="@+id/textView"
+        android:id="@+id/textViewCreators"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/textViewWelcome"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:text="@string/year"
+        android:id="@+id/textViewYear"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/textViewCreators"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton"
+        android:textColor="#FFFF00"
         android:text="@string/start_button"
         android:id="@+id/button"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:onClick="startWheel"/>
+        android:layout_marginTop="13dp"
+        android:onClick="startWheel"
+        android:layout_below="@+id/textViewYear"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

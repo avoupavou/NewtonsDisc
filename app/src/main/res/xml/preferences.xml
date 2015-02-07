@@ -11,7 +11,7 @@
             android:textColor="#FFFFFF"
             android:id="@+id/disc_type"
             android:title="Disc type"
-            android:summary="Select the disc type"
+            android:summary="Select disc type"
             android:key="discType"
             android:defaultValue="1"
             android:entries="@array/listArray"
