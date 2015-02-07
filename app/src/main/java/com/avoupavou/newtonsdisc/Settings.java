@@ -12,6 +12,7 @@ public class Settings extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getListView().setBackgroundDrawable(getResources().getDrawable(R.drawable.background_settings));
         addPreferencesFromResource(R.xml.preferences);
     }
 

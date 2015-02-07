@@ -6,9 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -16,7 +13,6 @@ import android.util.Log;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
-import java.nio.ShortBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -81,18 +77,17 @@ public class Square {
 		// loading texture
         SharedPreferences sharedPref;
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        // Get preferences for disc type
+        // Get preferences for disc1 type
         String downloadType = sharedPref.getString("discType", "1");
 
         //Log.d(TAG, "Disc Type:" + downloadType);
 
-        Bitmap bitmap;
+        Bitmap bitmap = null;
+
         if(downloadType.equals("1")) {
-            bitmap = BitmapFactory.decodeResource(context.getResources(),
-                    R.drawable.disc);
+            bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.disc1);
         } else {
-            bitmap = BitmapFactory.decodeResource(context.getResources(),
-                    R.drawable.disc1);
+            bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.disc2);
         }
 
 

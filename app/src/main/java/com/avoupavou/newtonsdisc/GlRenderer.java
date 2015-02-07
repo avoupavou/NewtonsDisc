@@ -73,7 +73,7 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
         gl.glRotatef(angle, 0, 0, 1);
         square.draw(gl);						// Draw the triangle
 
-        // slow down the disc
+        // slow down the disc1
         if(speed>0)
             speed = speed - 0.01f*speed;
         else if (speed <0)
@@ -96,7 +96,7 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
         gl.glMatrixMode(GL10.GL_MODELVIEW); 	//Select The Modelview Matrix
         gl.glLoadIdentity(); 					//Reset The Modelview Matrix
 
-        // Get preferences for disc speed pantazis.25.01.15
+        // Get preferences for disc1 speed pantazis.25.01.15
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this.context);
         boolean speedOn = sharedPref.getBoolean("speed", false);
         if(!speedOn) ultimateSpeed=0;

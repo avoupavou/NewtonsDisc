@@ -4,9 +4,11 @@
             android:id="@+id/speed"
             android:key="speed"
             android:title="@string/speed_setting_button"
+            android:textColor="#ffffff"
             android:defaultValue="false" />
 
         <ListPreference
+            android:textColor="#FFFFFF"
             android:id="@+id/disc_type"
             android:title="Disc type"
             android:summary="Select the disc type"
