@@ -1,0 +1,72 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:1:1
+	package
+		ADDED from AndroidManifest.xml:2:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:3:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:1:11
+	android:versionCode
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+application
+ADDED from AndroidManifest.xml:6:5
+MERGED from com.android.support:appcompat-v7:21.0.3:16:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
+	android:label
+		ADDED from AndroidManifest.xml:6:45
+	android:allowBackup
+		ADDED from AndroidManifest.xml:6:18
+	android:icon
+		ADDED from AndroidManifest.xml:7:9
+	android:theme
+		ADDED from AndroidManifest.xml:7:44
+activity#com.avoupavou.newtonsdisc.MainActivity
+ADDED from AndroidManifest.xml:9:9
+	android:label
+		ADDED from AndroidManifest.xml:9:48
+	android:name
+		ADDED from AndroidManifest.xml:9:19
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:10:17
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:11:25
+	android:name
+		ADDED from AndroidManifest.xml:11:33
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:12:25
+	android:name
+		ADDED from AndroidManifest.xml:12:35
+activity#com.avoupavou.newtonsdisc.WheelActivity
+ADDED from AndroidManifest.xml:15:9
+	android:label
+		ADDED from AndroidManifest.xml:15:49
+	android:name
+		ADDED from AndroidManifest.xml:15:19
+activity#com.avoupavou.newtonsdisc.About
+ADDED from AndroidManifest.xml:16:9
+	android:label
+		ADDED from AndroidManifest.xml:16:41
+	android:name
+		ADDED from AndroidManifest.xml:16:19
+activity#com.avoupavou.newtonsdisc.Settings
+ADDED from AndroidManifest.xml:17:9
+	android:label
+		ADDED from AndroidManifest.xml:17:44
+	android:name
+		ADDED from AndroidManifest.xml:17:19
+uses-sdk
+INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
+MERGED from com.android.support:appcompat-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
+	android:targetSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
