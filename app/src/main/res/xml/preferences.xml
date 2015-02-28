@@ -7,15 +7,24 @@
             android:textColor="#ffffff"
             android:defaultValue="false" />
 
-        <ListPreference
-            android:textColor="#FFFFFF"
-            android:id="@+id/disc_type"
-            android:title="Disc type"
-            android:summary="Select disc type"
-            android:key="discType"
-            android:defaultValue="1"
-            android:entries="@array/listArray"
-            android:entryValues="@array/listValues" />
+    <ListPreference
+        android:textColor="#FFFFFF"
+        android:id="@+id/disc_type"
+        android:title="Disc type"
+        android:summary="@string/disc_type"
+        android:key="discType"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
 
-    </PreferenceScreen>
+    <com.avoupavou.newtonsdisc.SeekBarPreference
+        android:defaultValue="50"
+        android:dialogMessage="@string/sensitivityDialog"
+        android:key="SEEKBAR_VALUE"
+        android:max="100"
+        android:summary=""
+        android:text="@string/sensitivity_text"
+        android:title="@string/sensitivity_summary" />
+
+</PreferenceScreen>
 

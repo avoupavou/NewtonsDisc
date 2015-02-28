@@ -2,9 +2,12 @@ package com.avoupavou.newtonsdisc;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.opengl.GLSurfaceView;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -14,9 +17,12 @@ import android.view.WindowManager;
 
 public class WheelActivity  extends Activity {
 
+    private final String LOG_TAG="WheelActivity";
     /** The OpenGL view */
     private GLSurfaceView glSurfaceView;
     private GlRenderer mRenderer;
+    private  float touch_scale_factor = 160.0f /320; //touch factor default = 180.0f / 320
+    private SharedPreferences sharedPref;
 
 
     /** Called when the activity is first created. */
@@ -38,6 +44,13 @@ public class WheelActivity  extends Activity {
         // the current activity context
         glSurfaceView.setRenderer(mRenderer= new GlRenderer(this));
         setContentView(glSurfaceView);
+
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        // Get preferences for disc1 type
+        int downloadType = sharedPref.getInt("SEEKBAR_VALUE", 50);
+        //Log.d(LOG_TAG, String.valueOf(downloadType));
+        touch_scale_factor*=(float)downloadType/100;
+        //Log.d(LOG_TAG, String.valueOf(touch_scale_factor));
     }
 
     /**
@@ -58,7 +71,6 @@ public class WheelActivity  extends Activity {
         glSurfaceView.onPause();
     }
 
-    private final float TOUCH_SCALE_FACTOR = 180.0f /320; //touch factor default = 180.0f / 320
     private float mPreviousX;
     private float mPreviousY;
 
@@ -90,8 +102,9 @@ public class WheelActivity  extends Activity {
 
                 mRenderer.setAngle(
                         mRenderer.getAngle() -
-                                ((dx + dy) * TOUCH_SCALE_FACTOR));  // = 180.0f / 320
+                                ((dx + dy) * touch_scale_factor));  // = 180.0f / 320
                 glSurfaceView.requestRender();
+                //Log.d(LOG_TAG, String.valueOf(touch_scale_factor));
         }
 
         mPreviousX = x;
