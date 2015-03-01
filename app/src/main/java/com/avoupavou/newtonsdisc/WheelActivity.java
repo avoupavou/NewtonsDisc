@@ -42,14 +42,15 @@ public class WheelActivity  extends Activity {
 
         // set our renderer to be the main renderer with
         // the current activity context
+
         glSurfaceView.setRenderer(mRenderer= new GlRenderer(this));
         setContentView(glSurfaceView);
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        // Get preferences for disc1 type
-        int downloadType = sharedPref.getInt("SEEKBAR_VALUE", 50);
+        // Get preferences for rotation Sensitivity
+        int downloadPercent = sharedPref.getInt("SEEKBAR_VALUE", 50);
         //Log.d(LOG_TAG, String.valueOf(downloadType));
-        touch_scale_factor*=(float)downloadType/100;
+        touch_scale_factor*=(float)downloadPercent/100;
         //Log.d(LOG_TAG, String.valueOf(touch_scale_factor));
     }
 

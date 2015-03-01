@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
     <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/action_settings" android:key="setting_title">
         <CheckBoxPreference
             android:id="@+id/speed"
             android:key="speed"
@@ -10,12 +11,23 @@
     <ListPreference
         android:textColor="#FFFFFF"
         android:id="@+id/disc_type"
-        android:title="Disc type"
+        android:title="@string/disc_type"
         android:summary="@string/disc_type"
         android:key="discType"
         android:defaultValue="1"
-        android:entries="@array/listArray"
-        android:entryValues="@array/listValues" />
+        android:entries="@array/DiscNames"
+        android:entryValues="@array/DiscValues"
+        android:dialogIcon="@drawable/disc1_tp"/>
+
+    <ListPreference
+        android:textColor="#FFFFFF"
+        android:id="@+id/bg_color"
+        android:title="@string/bg_color"
+        android:summary="@string/bg_color_sub"
+        android:key="bgColor"
+        android:defaultValue="white"
+        android:entries="@array/ColorNames"
+        android:entryValues="@array/ColorValues" />
 
     <com.avoupavou.newtonsdisc.SeekBarPreference
         android:defaultValue="50"
@@ -25,6 +37,7 @@
         android:summary=""
         android:text="@string/sensitivity_text"
         android:title="@string/sensitivity_summary" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
 

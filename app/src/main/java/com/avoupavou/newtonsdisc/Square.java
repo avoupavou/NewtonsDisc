@@ -74,21 +74,20 @@ public class Square {
 	public void loadGLTexture(GL10 gl, Context context) {
         //Log.d(TAG, "TESTTESTTEST:");
 
-		// loading texture
+		// loading preferences
         SharedPreferences sharedPref;
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         // Get preferences for disc1 type
         String downloadType = sharedPref.getString("discType", "1");
 
-        //Log.d(TAG, "Disc Type:" + downloadType);
-
         Bitmap bitmap = null;
 
-        if(downloadType.equals("1")) {
-            bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.disc1);
-        } else {
-            bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.disc2);
-        }
+            if (downloadType.equals("1")) {
+                bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.disc1_tp);
+            } else {
+                bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.disc2_tp);
+            }
+
 
 
         // generate one texture pointer
@@ -114,12 +113,16 @@ public class Square {
 	
 	/** The draw method for the square with the GL context */
 	public void draw(GL10 gl) {
+        // Enable blending using premultiplied alpha.
+        gl.glEnable(GL10.GL_BLEND);
+        gl.glBlendFunc(GL10.GL_ONE, GL10.GL_ONE_MINUS_SRC_ALPHA);
 		// bind the previously generated texture
 		gl.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);
-		
+
 		// Point to our buffers
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
 		gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+
 		
 		// Set the face rotation
 		gl.glFrontFace(GL10.GL_CW);
@@ -134,5 +137,7 @@ public class Square {
 		//Disable the client state before leaving
 		gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
 		gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+
+
 	}
 }

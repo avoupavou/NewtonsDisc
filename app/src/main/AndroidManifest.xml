@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.avoupavou.newtonsdisc"
-    android:versionName="1.0.0">
-    android:versionCode="1">
+    android:versionName="2.0.0">
+    android:versionCode="2">
 
     <application android:allowBackup="true" android:label="@string/app_name"
         android:icon="@drawable/disc_logo" android:theme="@style/AppTheme">

@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="listArray">
+    <string-array name="DiscNames">
         <item>Disc 1</item>
         <item>Disc 2</item>
     </string-array>
-    <string-array name="listValues">
+    <string-array name="DiscValues">
         <item>1</item>
         <item>2</item>
     </string-array>
+    <string-array name="ColorNames">
+        <item>White</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="ColorValues">
+        <item>white</item>
+        <item>black</item>
+        <item>red</item>
+        <item>blue</item>
+        <item>green</item>
+    </string-array>
+    <string-array name="DiscIcons">
+        <item>@drawable/disc1_tp</item>
+        <item>@drawable/disc2_tp</item>
+    </string-array>
+
 </resources>
