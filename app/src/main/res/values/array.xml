@@ -11,20 +11,9 @@
     <string-array name="ColorNames">
         <item>White</item>
         <item>Black</item>
-        <item>Red</item>
-        <item>Blue</item>
-        <item>Green</item>
     </string-array>
     <string-array name="ColorValues">
         <item>white</item>
         <item>black</item>
-        <item>red</item>
-        <item>blue</item>
-        <item>green</item>
     </string-array>
-    <string-array name="DiscIcons">
-        <item>@drawable/disc1_tp</item>
-        <item>@drawable/disc2_tp</item>
-    </string-array>
-
 </resources>

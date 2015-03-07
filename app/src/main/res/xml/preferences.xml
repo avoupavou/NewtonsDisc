@@ -25,18 +25,16 @@
         android:title="@string/bg_color"
         android:summary="@string/bg_color_sub"
         android:key="bgColor"
-        android:defaultValue="white"
+        android:defaultValue="black"
         android:entries="@array/ColorNames"
         android:entryValues="@array/ColorValues" />
 
     <com.avoupavou.newtonsdisc.SeekBarPreference
         android:defaultValue="50"
-        android:dialogMessage="@string/sensitivityDialog"
         android:key="SEEKBAR_VALUE"
         android:max="100"
         android:summary=""
-        android:text="@string/sensitivity_text"
-        android:title="@string/sensitivity_summary" />
+        android:title="@string/sensitivityDialog"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

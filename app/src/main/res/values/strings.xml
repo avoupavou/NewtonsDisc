@@ -16,7 +16,7 @@
     <string name="start_button">Start</string>
 
     <string name="About">A Newton disc, discovered by Isaac Newton, is a disc with segments in rainbow colours. When the disc is rotated, the colors fade to white; In this way Isaac Newton demonstrated that white light is a combination of the seven different colours found in a rainbow. This is due to the phenomenon called persistence of vision. It was an important discovery as it proves that light is not colourless, but has colour in it which together converge to give a faded white colour which we consider colourless. This property is based on the principles of dispersion of light.</string>
-    <string name="version" translatable="false">Newton’s disc for Android \nVersion 1.0.0@20150207 by avoupavou ®2015
+    <string name="version" translatable="false">Newton’s disc for Android \nVersion 2.0.0@20150307 by avoupavou ®2015
         </string>
 
     <string name="title_activity_about">About</string>
@@ -26,9 +26,7 @@
     <string name="sensitivity_string">Set Sensitivity</string>
     <string name="disc_type">Select disc type</string>
     <string name="sensitivityDialog">Rotation touch factor:</string>
-    <string name="sensitivity_summary">Disc Sensitivity</string>
     <string name="sensitivity_test">Set Sensitivity %</string>
-    <string name="sensitivity_text" translatable="false">%</string>
     <string name="bg_color">BackGround Color</string>
     <string name="bg_color_sub">Select Background Color</string>
 

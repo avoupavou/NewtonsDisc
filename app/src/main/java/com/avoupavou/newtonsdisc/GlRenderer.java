@@ -47,17 +47,11 @@ public class GlRenderer  implements GLSurfaceView.Renderer {
 
         SharedPreferences sharedPref;
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        String downloadBgColor = sharedPref.getString("bgColor", "white");
+        String downloadBgColor = sharedPref.getString("bgColor", "black");
 
         // Set the background frame color
         if (downloadBgColor.equals("white")) {
             gl.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-        } else if (downloadBgColor.equals("red")) {
-            gl.glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-        } else if (downloadBgColor.equals("blue")) {
-            gl.glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
-        } else if (downloadBgColor.equals("green")) {
-            gl.glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
         } else {
            //black
            gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
