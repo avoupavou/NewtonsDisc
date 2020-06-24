@@ -3,7 +3,6 @@ package com.avoupavou.newtonsdisc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,17 +40,17 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public void startWheel(View view){
-        Intent towheel = new Intent(MainActivity.this, WheelActivity.class);
-        startActivity(towheel);
+    public void startWheel(View view) {
+        Intent toWheel = new Intent(MainActivity.this, WheelActivity.class);
+        startActivity(toWheel);
     }
 
-    public void openAbout(){
+    public void openAbout() {
         Intent toAbout = new Intent(MainActivity.this, About.class);
         startActivity(toAbout);
     }
 
-    public void openSettings(){
+    public void openSettings() {
         Intent toSettings = new Intent(MainActivity.this, Settings.class);
         startActivity(toSettings);
     }
