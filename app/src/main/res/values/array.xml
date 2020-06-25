@@ -3,10 +3,12 @@
     <string-array name="DiscNames">
         <item>Disc 1</item>
         <item>Disc 2</item>
+        <item>Disc 3</item>
     </string-array>
     <string-array name="DiscValues">
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
     <string-array name="ColorNames">
         <item>White</item>
