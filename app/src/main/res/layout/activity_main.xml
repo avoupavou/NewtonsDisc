@@ -8,16 +8,18 @@
 
 
     <TextView
+        android:id="@+id/textViewWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome_text"
+        android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF"
-        android:textAlignment="center"
-        android:text="@string/welcome_text"
-        android:id="@+id/textViewWelcome"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,7 +31,8 @@
         android:id="@+id/textViewCreators"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/textViewWelcome"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +44,8 @@
         android:id="@+id/textViewYear"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/textViewCreators"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"

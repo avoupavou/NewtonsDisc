@@ -1,12 +1,13 @@
 package com.avoupavou.newtonsdisc;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class About extends ActionBarActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class About extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void openSettings(){
+    public void openSettings() {
         Intent toSettings = new Intent(About.this, Settings.class);
         startActivity(toSettings);
     }
