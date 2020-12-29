@@ -1,6 +1,7 @@
 package com.avoupavou.newtonsdisc;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
     public void openSettings() {
         Intent toSettings = new Intent(MainActivity.this, Settings.class);
         startActivity(toSettings);
+    }
+
+    public void buyUsACoffee(View view){
+        Intent toBuyUseACoffee = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.buymeacoffee.com/avoupavou"));
+        startActivity(toBuyUseACoffee);
     }
 
 

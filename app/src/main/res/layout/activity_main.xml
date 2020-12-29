@@ -78,4 +78,21 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewYear"
         app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/orangeroundedbutton"
+        android:onClick="buyUsACoffee"
+        android:padding="8dp"
+        android:shadowColor="#533737"
+        android:shadowDx="1"
+        android:shadowRadius="100"
+        android:text="Buy us coffee! ☕"
+        android:textAllCaps="false"
+        android:textColor="#FBFBFB"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
