@@ -1,21 +1,17 @@
 package com.avoupavou.newtonsdisc;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.opengl.GLSurfaceView;
-import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.preference.PreferenceManager;
 import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class WheelActivity  extends Activity {
+
+public class WheelActivity  extends AppCompatActivity {
 
     private final String LOG_TAG="WheelActivity";
     /** The OpenGL view */
@@ -92,12 +88,12 @@ public class WheelActivity  extends Activity {
 
 
                 // reverse direction of rotation above the mid-line
-                if (y > glSurfaceView.getHeight() / 2) {
+                if (y > glSurfaceView.getHeight() / 2.0f) {
                     dx = dx * -1 ;
                 }
 
                 // reverse direction of rotation to left of the mid-line
-                if (x < glSurfaceView.getWidth() / 2) {
+                if (x < glSurfaceView.getWidth() / 2.0f) {
                     dy = dy * -1 ;
                 }
 

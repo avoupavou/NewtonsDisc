@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NewtonsDisc.iml" filepath="$PROJECT_DIR$/NewtonsDisc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewtonsDisc.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewtonsDisc.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewtonsDisc.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewtonsDisc.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewtonsDisc.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewtonsDisc.app.unitTest.iml" />
     </modules>
   </component>
 </project>
-
