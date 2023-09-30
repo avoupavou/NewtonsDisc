@@ -1,6 +1,7 @@
 package com.avoupavou.newtonsdisc;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,32 +29,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case R.id.action_about:
-                openAbout();
-                return true;
-            case R.id.action_settings:
-                openSettings();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_about) {
+            openAbout();
+            return true;
+        } else if (itemId == R.id.action_settings) {
+            openSettings();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
 
     }
 
-    public void startWheel(View view){
-        Intent towheel = new Intent(MainActivity.this, WheelActivity.class);
-        startActivity(towheel);
+    public void startWheel(View view) {
+        Intent toWheel = new Intent(MainActivity.this, WheelActivity.class);
+        startActivity(toWheel);
     }
 
-    public void openAbout(){
+    public void openAbout() {
         Intent toAbout = new Intent(MainActivity.this, About.class);
         startActivity(toAbout);
     }
 
-    public void openSettings(){
+    public void openSettings() {
         Intent toSettings = new Intent(MainActivity.this, Settings.class);
         startActivity(toSettings);
+    }
+
+    public void buyUsACoffee(View view){
+        Intent toBuyUseACoffee = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.buymeacoffee.com/avoupavou"));
+        startActivity(toBuyUseACoffee);
     }
 
 

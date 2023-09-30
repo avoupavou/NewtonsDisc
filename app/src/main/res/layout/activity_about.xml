@@ -19,14 +19,15 @@
         android:elegantTextHeight="false" />
 
 
-    <TextView android:textAlignment="center"
-        android:text="@string/version"
-        android:textColor="#FFFFFF"
+    <TextView
         android:id="@+id/textViewVersion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentBottom="true"
+        android:text="@string/version"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

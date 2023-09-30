@@ -39,7 +39,7 @@ public class About extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void openSettings(){
+    public void openSettings() {
         Intent toSettings = new Intent(About.this, Settings.class);
         startActivity(toSettings);
     }
