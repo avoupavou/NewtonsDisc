@@ -97,8 +97,8 @@ public class WheelActivity  extends AppCompatActivity {
                     dy = dy * -1 ;
                 }
 
-                mRenderer.setAngle(
-                        mRenderer.getAngle() -
+                mRenderer.setSpeed(
+                        mRenderer.getSpeed() -
                                 ((dx + dy) * touch_scale_factor));  // = 180.0f / 320
                 glSurfaceView.requestRender();
                 //Log.d(LOG_TAG, String.valueOf(touch_scale_factor));
